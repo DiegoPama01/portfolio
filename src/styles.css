@@ -1,0 +1,12 @@
+@import "tailwindcss";
+@config "../tailwind.config.ts";
+
+/* opcional: tu fuente global */
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+
+.neon-glow {
+  box-shadow: 0 0 20px rgba(19, 164, 236, 0.2);
+}
