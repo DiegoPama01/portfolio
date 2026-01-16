@@ -8,6 +8,6 @@ export class EmailService {
   constructor(private http: HttpClient) {}
 
   sendEmail(payload: { to: string; subject: string; html: string }) {
-    return this.http.post('/api/send-email', payload);
+    return this.http.post('/api/send_email', payload);
   }
 }
