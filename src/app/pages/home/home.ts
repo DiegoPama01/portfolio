@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { Hero } from '../../sections/hero/hero';
-import { TechStack } from '../../sections/tech-stack/tech-stack';
-import { Cta } from '../../sections/cta/cta';
+import { Hero } from './hero/hero';
+import { TechStack } from './tech-stack/tech-stack';
+import { Cta } from './cta/cta';
 
 @Component({
   selector: 'app-home',
