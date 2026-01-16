@@ -28,8 +28,11 @@
       <a
         *ngFor="let l of links"
         [routerLink]="l.path"
-        routerLinkActive="text-primary"
-        class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors"
+        routerLinkActive
+        #rla="routerLinkActive"
+        [routerLinkActiveOptions]="{ exact: true }"
+        [ngClass]="rla.isActive ? 'text-primary dark:text-primary' : 'text-slate-600 dark:text-slate-300'"
+        class="hover:text-primary dark:hover:text-primary transition-colors"
       >
         {{ l.label }}
       </a>

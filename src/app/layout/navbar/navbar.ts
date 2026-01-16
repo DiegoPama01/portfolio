@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { NgFor } from '@angular/common';
+import { NgClass, NgFor } from '@angular/common';
 
 type NavLink = { label: string; path: string };
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive, NgFor],
+  imports: [RouterLink, RouterLinkActive, NgFor, NgClass],
   templateUrl: './navbar.html',
 })
 export class Navbar {

@@ -1,1 +1,99 @@
-<p>contact works!</p>
+<section class="max-w-7xl mx-auto px-6 lg:px-10 py-16 lg:py-24">
+  <div class="mb-16 lg:mb-20">
+    <h1 class="text-slate-900 dark:text-white text-4xl sm:text-5xl lg:text-6xl font-black leading-tight tracking-tight">
+      Let's build
+      <span class="block text-primary">something together.</span>
+    </h1>
+    <p class="text-slate-600 dark:text-white/60 text-lg lg:text-xl max-w-2xl mt-6 leading-relaxed">
+      I'm available for freelance work and full-time opportunities. Share a few details and I'll get
+      back to you within 24 hours.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
+    <div class="lg:col-span-8">
+      <form class="space-y-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="flex flex-col gap-3">
+            <label class="contact-label">Full name</label>
+            <input class="contact-input" placeholder="Your name" type="text" />
+          </div>
+          <div class="flex flex-col gap-3">
+            <label class="contact-label">Email address</label>
+            <input class="contact-input" placeholder="you@email.com" type="email" />
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-3">
+          <label class="contact-label">Subject</label>
+          <input class="contact-input" placeholder="Project inquiry" type="text" />
+        </div>
+
+        <div class="flex flex-col gap-3">
+          <label class="contact-label">Your message</label>
+          <textarea
+            class="contact-input contact-textarea"
+            placeholder="Tell me about your goals..."
+            rows="6"
+          ></textarea>
+        </div>
+
+        <div class="pt-2">
+          <button
+            class="group inline-flex items-center gap-3 bg-primary text-white dark:text-background-dark px-6 py-3 rounded-lg font-bold transition-all hover:brightness-110"
+            type="submit"
+          >
+            Send message
+            <span class="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">
+              arrow_forward
+            </span>
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <aside class="lg:col-span-4 flex flex-col gap-10">
+      <div>
+        <h3 class="contact-kicker">
+          <span class="contact-line"></span>
+          Connection links
+        </h3>
+        <div class="space-y-6">
+          <a class="contact-link" href="mailto:hello@yourdomain.com">
+            <div class="contact-icon">
+              <span class="material-symbols-outlined text-primary text-xl">mail</span>
+            </div>
+            <div class="flex flex-col">
+              <span class="contact-link-label">Email me</span>
+              <span class="text-base">hello@yourdomain.com</span>
+            </div>
+          </a>
+
+          <a class="contact-link" href="#">
+            <div class="contact-icon">
+              <span class="material-symbols-outlined text-primary text-xl">hub</span>
+            </div>
+            <div class="flex flex-col">
+              <span class="contact-link-label">LinkedIn</span>
+              <span class="text-base">your-linkedin</span>
+            </div>
+          </a>
+
+          <a class="contact-link" href="#">
+            <div class="contact-icon">
+              <span class="material-symbols-outlined text-primary text-xl">code</span>
+            </div>
+            <div class="flex flex-col">
+              <span class="contact-link-label">GitHub</span>
+              <span class="text-base">your-github</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-note">
+        Currently based in Spain and open to remote collaborations worldwide.
+      </div>
+    </aside>
+  </div>
+</section>

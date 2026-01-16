@@ -1,0 +1,23 @@
+<div>
+  <div class="bg-white dark:bg-[#192b33] p-8 rounded-2xl border border-slate-200 dark:border-[#233c48] h-full">
+    <h3 class="text-slate-900 dark:text-white text-xl font-bold mb-8 flex items-center gap-2">
+      <span class="material-symbols-outlined text-primary">layers</span>
+      {{ title }}
+    </h3>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+      @for (t of items; track t.label) {
+        <div
+          class="tech-card flex flex-col items-center justify-center p-4 bg-background-light dark:bg-background-dark rounded-xl border border-transparent transition-all gap-2 group"
+        >
+          <span
+            class="tech-icon"
+            [attr.aria-label]="t.label"
+            [style.--icon-url]="'url(' + t.icon + ')'"
+          ></span>
+          <span class="text-sm font-semibold">{{ t.label }}</span>
+        </div>
+      }
+    </div>
+  </div>
+</div>

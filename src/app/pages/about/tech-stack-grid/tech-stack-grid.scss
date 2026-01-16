@@ -1,0 +1,19 @@
+.tech-icon {
+  width: 2rem;
+  height: 2rem;
+  display: inline-block;
+  background-color: #13a4ec;
+  mask-image: var(--icon-url);
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+  -webkit-mask-image: var(--icon-url);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+  transition: transform 200ms ease;
+}
+
+.tech-card:hover .tech-icon {
+  transform: scale(1.1);
+}

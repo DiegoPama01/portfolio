@@ -1,1 +1,20 @@
-<p>projects works!</p>
+<main class="max-w-300 mx-auto px-4 md:px-10 py-12">
+  <div class="flex flex-col gap-4 mb-8">
+    <h1 class="text-slate-900 dark:text-white text-5xl font-black leading-tight tracking-tight">
+      Project Showcase
+    </h1>
+    <p class="text-slate-600 dark:text-[#92b7c9] text-lg max-w-2xl font-normal leading-relaxed">
+      A curated selection of my professional work, ranging from scalable web applications to
+      interactive data visualizations. Each project reflects my commitment to clean code and
+      user-centric design.
+    </p>
+  </div>
+
+  <app-filter-chips
+    [chips]="chips"
+    [activeId]="activeFilterId()"
+    (activeIdChange)="onFilterChange($event)"
+  ></app-filter-chips>
+
+  <app-project-grid [projects]="filteredProjects()"></app-project-grid>
+</main>

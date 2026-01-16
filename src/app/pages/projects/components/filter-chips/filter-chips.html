@@ -1,0 +1,17 @@
+<div class="flex gap-3 mb-10 flex-wrap">
+      <button
+        *ngFor="let chip of chips"
+        type="button"
+        (click)="select(chip.id)"
+        class="flex h-10 items-center justify-center rounded-full px-6 text-sm font-semibold transition-all cursor-pointer"
+        [class.bg-primary]="chip.id === activeId"
+        [class.text-white]="chip.id === activeId"
+        [class.bg-slate-200]="chip.id !== activeId"
+        [class.dark:bg-[#192b33]]="chip.id !== activeId"
+        [class.text-slate-700]="chip.id !== activeId"
+        [class.dark:text-[#92b7c9]]="chip.id !== activeId"
+        [class.hover:bg-primary/20]="chip.id !== activeId"
+      >
+        {{ chip.label }}
+      </button>
+    </div>

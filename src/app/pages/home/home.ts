@@ -9,6 +9,6 @@ import { Cta } from '../../sections/cta/cta';
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
-export class Home {
+export class HomePage {
 
 }

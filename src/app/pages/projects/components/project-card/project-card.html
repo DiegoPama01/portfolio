@@ -1,0 +1,72 @@
+<article
+  class="project-card flex flex-col bg-white dark:bg-[#192b33] rounded-xl overflow-hidden border border-slate-200 dark:border-[#233c48] transition-all group"
+>
+  <div class="relative overflow-hidden aspect-video">
+    <img
+      class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+      [src]="project.coverImageUrl"
+      [alt]="project.coverAlt"
+      loading="lazy"
+    />
+
+    <div
+      class="absolute inset-0 bg-linear-to-t from-background-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4"
+    >
+      <span
+        class="text-white text-xs font-bold uppercase tracking-widest bg-primary px-2 py-1 rounded"
+      >
+        {{ project.categoryLabel }}
+      </span>
+    </div>
+  </div>
+
+  <div class="p-6 flex flex-col flex-1">
+    <h3
+      class="text-slate-900 dark:text-white text-xl font-bold mb-2 group-hover:text-primary transition-colors"
+    >
+      {{ project.title }}
+    </h3>
+
+    <p class="text-slate-600 dark:text-[#92b7c9] text-sm mb-4 line-clamp-2">
+      {{ project.description }}
+    </p>
+
+    <div class="flex items-center gap-3 mb-6">
+      @for (t of project.tech; track t.icon) {
+      <span
+        class="material-symbols-outlined text-primary text-xl"
+        [attr.title]="t.title"
+        aria-hidden="true"
+      >
+        {{ t.icon }}
+      </span>
+      }
+    </div>
+
+    <div class="mt-auto flex gap-3">
+      <a
+        class="flex-1 bg-primary text-white py-2 rounded-lg text-sm font-bold flex items-center justify-center gap-2 hover:bg-primary/90"
+        [href]="project.primaryAction.url"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <span class="material-symbols-outlined text-sm" aria-hidden="true">
+          {{ project.primaryAction.icon }}
+        </span>
+        {{ project.primaryAction.label }}
+      </a>
+
+      <a
+        class="px-4 py-2 border border-slate-300 dark:border-[#233c48] text-slate-700 dark:text-white rounded-lg text-sm font-bold hover:bg-slate-100 dark:hover:bg-white/5 transition-colors"
+        [href]="project.secondaryAction.url"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <span class="material-symbols-outlined text-base align-middle" aria-hidden="true">
+          {{ project.secondaryAction.icon }}
+        </span>
+        {{ project.secondaryAction.label }}
+      </a>
+    </div>
+  </div>
+</article>
