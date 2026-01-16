@@ -25,46 +25,23 @@
               autocomplete="name"
               formControlName="fullName"
             />
-            <p
-              *ngIf="contactForm.get('fullName')?.touched && contactForm.get('fullName')?.invalid"
-              class="text-sm text-red-500"
-            >
-              Please enter your full name.
-            </p>
+            @if (contactForm.get('fullName')?.touched && contactForm.get('fullName')?.invalid) {
+              <p class="text-sm text-red-500">Please enter your full name.</p>
+            }
           </div>
 
           <div class="flex flex-col gap-3">
-            <label class="contact-label">Email</label>
+            <label class="contact-label">Subject</label>
             <input
               class="contact-input"
-              placeholder="you@email.com"
-              type="email"
-              autocomplete="email"
-              formControlName="email"
+              placeholder="Project inquiry"
+              type="text"
+              formControlName="subject"
             />
-            <p
-              *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.invalid"
-              class="text-sm text-red-500"
-            >
-              Please enter a valid email.
-            </p>
+            @if (contactForm.get('subject')?.touched && contactForm.get('subject')?.invalid) {
+              <p class="text-sm text-red-500">Please add a subject.</p>
+            }
           </div>
-        </div>
-
-        <div class="flex flex-col gap-3">
-          <label class="contact-label">Subject</label>
-          <input
-            class="contact-input"
-            placeholder="Project inquiry"
-            type="text"
-            formControlName="subject"
-          />
-          <p
-            *ngIf="contactForm.get('subject')?.touched && contactForm.get('subject')?.invalid"
-            class="text-sm text-red-500"
-          >
-            Please add a subject.
-          </p>
         </div>
 
         <div class="flex flex-col gap-3">
@@ -75,20 +52,17 @@
             rows="6"
             formControlName="message"
           ></textarea>
-          <p
-            *ngIf="contactForm.get('message')?.touched && contactForm.get('message')?.invalid"
-            class="text-sm text-red-500"
-          >
-            Please share a few details about the project.
-          </p>
+          @if (contactForm.get('message')?.touched && contactForm.get('message')?.invalid) {
+            <p class="text-sm text-red-500">Please share a few details about the project.</p>
+          }
         </div>
 
-        <p *ngIf="submitError" class="text-sm text-red-500">
-          {{ submitError }}
-        </p>
-        <p *ngIf="submitSuccess" class="text-sm text-emerald-600">
-          {{ submitSuccess }}
-        </p>
+        @if (submitError) {
+          <p class="text-sm text-red-500">{{ submitError }}</p>
+        }
+        @if (submitSuccess) {
+          <p class="text-sm text-emerald-600">{{ submitSuccess }}</p>
+        }
 
         <div class="pt-2">
           <button

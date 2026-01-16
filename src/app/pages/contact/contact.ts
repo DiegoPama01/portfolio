@@ -16,7 +16,6 @@ export class ContactPage {
 
   readonly contactForm = this.formBuilder.group({
     fullName: ['', [Validators.required, Validators.maxLength(80)]],
-    email: ['', [Validators.required, Validators.email]],
     subject: ['', [Validators.required, Validators.maxLength(120)]],
     message: ['', [Validators.required, Validators.maxLength(2000)]],
   });
@@ -34,9 +33,9 @@ export class ContactPage {
       return;
     }
 
-    const { fullName, email, subject, message } = this.contactForm.getRawValue();
+    const { fullName, subject, message } = this.contactForm.getRawValue();
 
-    if (!fullName || !email || !subject || !message) {
+    if (!fullName || !subject || !message) {
       return;
     }
 
@@ -45,7 +44,6 @@ export class ContactPage {
     const html = `
       <div>
         <p><strong>Name:</strong> ${this.escapeHtml(fullName)}</p>
-        <p><strong>Email:</strong> ${this.escapeHtml(email)}</p>
         <p><strong>Subject:</strong> ${this.escapeHtml(subject)}</p>
         <p><strong>Message:</strong></p>
         <p>${this.escapeHtml(message).replace(/\n/g, '<br />')}</p>
