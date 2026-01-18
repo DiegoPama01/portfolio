@@ -31,17 +31,31 @@
           </div>
 
           <div class="flex flex-col gap-3">
-            <label class="contact-label">Subject</label>
+            <label class="contact-label">Email</label>
             <input
               class="contact-input"
-              placeholder="Project inquiry"
-              type="text"
-              formControlName="subject"
+              placeholder="you@email.com"
+              type="email"
+              autocomplete="email"
+              formControlName="email"
             />
-            @if (contactForm.get('subject')?.touched && contactForm.get('subject')?.invalid) {
-              <p class="text-sm text-red-500">Please add a subject.</p>
+            @if (contactForm.get('email')?.touched && contactForm.get('email')?.invalid) {
+              <p class="text-sm text-red-500">Please enter a valid email.</p>
             }
           </div>
+        </div>
+
+        <div class="flex flex-col gap-3">
+          <label class="contact-label">Subject</label>
+          <input
+            class="contact-input"
+            placeholder="Project inquiry"
+            type="text"
+            formControlName="subject"
+          />
+          @if (contactForm.get('subject')?.touched && contactForm.get('subject')?.invalid) {
+            <p class="text-sm text-red-500">Please add a subject.</p>
+          }
         </div>
 
         <div class="flex flex-col gap-3">
